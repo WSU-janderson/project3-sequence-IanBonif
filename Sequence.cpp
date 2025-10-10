@@ -72,9 +72,8 @@ void Sequence::insert(size_t position, std::string item) {
     for (size_t i = 0; i < position; i++) {
         current = current->next;
     }
-    current->next = newNodePtr;
-    newNodePtr->item = item;
-
+    newNodePtr->next = current;
+    current->item = item;
 }
 std::string Sequence::front()const {
     SequenceNode *current= head;
