@@ -4,22 +4,6 @@
 
 //need to include string
 #include <string>
-//creates class Sequence
-class Sequence {
-private:
-    //head for the double linked list
-    Sequence* head;
-    //tail for the double linked list
-    Sequence* tail;
-    //length of list
-    int size_t;
-    //
-    public:
-    Sequence(Sequence* head, Sequence* tail, int size_t);
-    void Sequence(int size);
-
-};
-
 
 //this was taken from the project pdf
 class SequenceNode {
@@ -38,5 +22,23 @@ public: // to make it easier, we can make the data members public so we don't ne
     SequenceNode(std::string item) : next(nullptr), prev(nullptr), item(item)
     {}
 };
+
+//creates class Sequence
+class Sequence {
+private:
+    //head for the double linked list
+    SequenceNode* head;
+    //tail for the double linked list
+    SequenceNode* tail;
+    //amount of items
+    size_t sz;
+    //
+    public:
+    Sequence(size_t sz);
+
+
+};
+
+
 
 #endif
