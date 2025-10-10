@@ -14,5 +14,14 @@ using namespace std;
 int main() {
     cout << "Your project is ready to go!" << endl;
 
+     Sequence mySequence(5);
+     mySequence.push_back("cat");
+   string i= mySequence.back();
+cout << i << endl;
+    //mySequence.insert(0,"dog");
+    string k= mySequence.front();
+    cout << k << endl;
+    mySequence[3]="rat";
+
     return 0;
 }

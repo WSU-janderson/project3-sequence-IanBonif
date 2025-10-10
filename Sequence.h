@@ -21,22 +21,28 @@ public: // to make it easier, we can make the data members public so we don't ne
     /// node's element is set to the given value
     SequenceNode(std::string item) : next(nullptr), prev(nullptr), item(item)
     {}
+
 };
 
 //creates class Sequence
 class Sequence {
-private:
+public:
     //head for the double linked list
     SequenceNode* head;
     //tail for the double linked list
     SequenceNode* tail;
     //amount of items
-    size_t sz;
-    //
-    public:
+    size_t size;
+
+    Sequence() : head(nullptr), tail(nullptr), size(0) {}
+    //builds the linked list of size sz
     Sequence(size_t sz);
-
-
+    void AddNode();
+    void push_back(std::string item) ;
+    std::string back() const;
+    void insert(size_t position, std::string item);
+    std::string front() const;
+    std::string& operator[](size_t position);
 };
 
 
