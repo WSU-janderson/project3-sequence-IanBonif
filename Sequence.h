@@ -32,17 +32,25 @@ public:
     //tail for the double linked list
     SequenceNode* tail;
     //amount of items
-    size_t size;
+    size_t Size;
 
-    Sequence() : head(nullptr), tail(nullptr), size(0) {}
+    Sequence() : head(nullptr), tail(nullptr), Size(0) {}
     //builds the linked list of size sz
     Sequence(size_t sz);
+    Sequence(const Sequence& s);
     void AddNode();
+    void AddNode(std::string item);
     void push_back(std::string item) ;
     std::string back() const;
     void insert(size_t position, std::string item);
     std::string front() const;
     std::string& operator[](size_t position);
+    void clear();
+    Sequence& operator=(const Sequence& s);
+    ~Sequence();
+    bool empty() const;
+    size_t size() const;
+    void pop_back();
 };
 
 

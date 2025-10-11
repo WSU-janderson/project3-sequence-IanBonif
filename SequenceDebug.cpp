@@ -18,10 +18,12 @@ int main() {
      mySequence.push_back("cat");
    string i= mySequence.back();
 cout << i << endl;
-    mySequence.insert(4,"dog");
-    string k= mySequence.front();
-    cout << k << endl;
+   mySequence.insert(4,"dog");
+  //  string k= mySequence.front();
+   // cout << k << endl;
     mySequence[3]="rat";
+   //mySequence.clear();
+   mySequence.pop_back();
 
     return 0;
 }
