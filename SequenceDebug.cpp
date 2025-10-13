@@ -25,7 +25,7 @@ cout << i << endl;
  mySequence[4]="hello";
    //mySequence.clear();
    mySequence.pop_back();
-//mySequence.erase(4);
+mySequence.erase(4,2);
 
     return 0;
 }

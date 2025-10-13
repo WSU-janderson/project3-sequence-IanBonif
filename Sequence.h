@@ -52,6 +52,7 @@ public:
     size_t size() const;
     void pop_back();
     void erase(size_t position);
+    void erase(size_t position, size_t count);
 };
 
 
