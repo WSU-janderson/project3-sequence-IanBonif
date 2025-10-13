@@ -5,8 +5,10 @@
 
 
 #include "Sequence.h"
-#include <string>
 
+#include <iostream>
+#include <string>
+#include <ostream>
 
 //sequence that makes empty list or list of sz amount of items
 Sequence::Sequence(size_t sz) {
@@ -182,4 +184,16 @@ void Sequence::erase(size_t position, size_t count) {
         current2=current2->next;
     }
     current->next=current2;
+}
+void Sequence::print(std::ostream &os) {
+    SequenceNode *current= head;
+    os<<"(";
+    while (current != nullptr) {
+        os << current->item;
+        if (current->next != nullptr) {
+            os << ", ";
+        }
+        current = current->next;
+    }
+    os<< ")";
 }

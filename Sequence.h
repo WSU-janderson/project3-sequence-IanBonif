@@ -53,6 +53,12 @@ public:
     void pop_back();
     void erase(size_t position);
     void erase(size_t position, size_t count);
+    void print(std::ostream &os);
+    friend std::ostream& operator<<(std::ostream& os, Sequence& s) {
+        s.print(os);
+        return os;
+    }
+
 };
 
 
