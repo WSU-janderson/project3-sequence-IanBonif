@@ -155,3 +155,17 @@ void Sequence::pop_back() {
     current->next=nullptr;
 
 }
+void Sequence::erase(size_t position) {
+    Size=Size-1;
+    size_t previous=position-1;
+    size_t newPosition=position+1;
+    SequenceNode *current= head;
+    SequenceNode *current2=head;
+    for (size_t i = 0; i < previous; i++) {
+        current = current->next;
+    }
+    for (size_t i =0; i < newPosition; i++) {
+        current2=current2->next;
+    }
+    current->next=current2;
+}

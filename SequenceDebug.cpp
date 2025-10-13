@@ -22,8 +22,10 @@ cout << i << endl;
   //  string k= mySequence.front();
    // cout << k << endl;
     mySequence[3]="rat";
+ mySequence[4]="hello";
    //mySequence.clear();
    mySequence.pop_back();
+//mySequence.erase(4);
 
     return 0;
 }

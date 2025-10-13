@@ -51,6 +51,7 @@ public:
     bool empty() const;
     size_t size() const;
     void pop_back();
+    void erase(size_t position);
 };
 
 
