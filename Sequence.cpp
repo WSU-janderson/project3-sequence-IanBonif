@@ -30,12 +30,16 @@ void Sequence::AddNode() {
 
     if (this->head == nullptr) {
         this->head=newNodePtr;
+        this->tail=newNodePtr;
+        newNodePtr->prev=nullptr;
     }else {
         SequenceNode *current= head;
         while (current->next != nullptr) {
             current = current->next;
         }
         current->next = newNodePtr;
+        this->tail=newNodePtr;
+        newNodePtr->prev=current;
     }
 }
 void Sequence::AddNode(std::string item) {
@@ -53,6 +57,8 @@ void Sequence::AddNode(std::string item) {
             current = current->next;
         }
         current->next = newNodePtr;
+        this->tail=newNodePtr;
+        newNodePtr->prev=current;
     }
 }
 void Sequence::push_back(std::string item) {
@@ -70,6 +76,8 @@ void Sequence::push_back(std::string item) {
             current = current->next;
         }
         current->next = newNodePtr;
+        this->tail=newNodePtr;
+        newNodePtr->prev=current;
     }
 }
 std::string Sequence::back() const {
@@ -154,8 +162,8 @@ void Sequence::pop_back() {
      for (size_t i = 0; i <Size-1; i++){
         current = current->next;
     }
+    this->tail=current;
     current->next=nullptr;
-
 }
 void Sequence::erase(size_t position) {
     Size=Size-1;
