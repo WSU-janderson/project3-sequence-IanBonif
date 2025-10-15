@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <ostream>
+#include <exception>
 
 //sequence that makes empty list or list of sz amount of items
 Sequence::Sequence(size_t sz) {
@@ -112,6 +113,9 @@ std::string Sequence::front()const {
     return current->item;
 }
 std::string& Sequence::operator[](size_t position) {
+    if (position>Size-1) {
+        throw std::exception();
+    }
     SequenceNode *current= head;
     for (size_t i = 0; i < position; i++) {
         current = current->next;
@@ -168,6 +172,9 @@ void Sequence::pop_back() {
     current->next=nullptr;
 }
 void Sequence::erase(size_t position) {
+    if (position>Size-1) {
+        throw std::exception();
+    }
     Size=Size-1;
     size_t previous=position-1;
     size_t newPosition=position+1;
@@ -182,6 +189,9 @@ void Sequence::erase(size_t position) {
     current->next=current2;
 }
 void Sequence::erase(size_t position, size_t count) {
+    if (position>Size-1||count+position>Size-1) {
+        throw std::exception();
+    }
     Size=Size-count;
     size_t previous=position-1;
     size_t newPosition=position+count;
