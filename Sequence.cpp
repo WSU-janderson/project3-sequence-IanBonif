@@ -99,8 +99,10 @@ void Sequence::insert(size_t position, std::string item) {
     for (size_t i = 0; i < position; i++) {
         current = current->next;
     }
+    newNodePtr->prev=current;
     newNodePtr->next =current->next;
     current->next =newNodePtr;
+
     //current->next = newNodePtr;
     //newNodePtr->next = temp;
     newNodePtr->item = item;

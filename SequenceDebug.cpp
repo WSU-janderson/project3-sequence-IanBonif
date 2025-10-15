@@ -14,17 +14,17 @@ using namespace std;
 int main() {
     cout << "Your project is ready to go!" << endl;
 
-     Sequence mySequence(5);
+     Sequence mySequence(6);
 //      mySequence.push_back("cat");
 //    string i= mySequence.back();
 // cout << i << endl;
-//    mySequence.insert(4,"dog");
+  // mySequence.insert(4,"dog");
 //   //  string k= mySequence.front();
 //    // cout << k << endl;
 //     mySequence[3]="rat";
 //  mySequence[4]="hello";
 //    //mySequence.clear();
-  mySequence.pop_back();
-// mySequence.erase(4,2);
+ // mySequence.pop_back();
+ mySequence.erase(4,2);
     return 0;
 }
